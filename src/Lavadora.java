@@ -44,6 +44,8 @@ public class Lavadora extends Electrodomesticos{
         }else {//agua caliente
 
         }
+
     }
+
 
 }
