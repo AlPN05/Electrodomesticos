@@ -1,51 +1,52 @@
 public class Lavadora extends Electrodomesticos{
-    double Precio;
-    boolean AguaCaliente;
+    protected double precio;
+    boolean aguaCaliente;
 
     public Lavadora(String marca, Double potencia) {
         super(marca, potencia);
-        this.AguaCaliente=false;
+        this.aguaCaliente =false;
     }
 
     public Lavadora(String marca, Double potencia, double precio, boolean aguaCaliente) {
         super(marca, potencia);
-        Precio = precio;
-        AguaCaliente = aguaCaliente;
+        this.precio = precio;
+        this.aguaCaliente = aguaCaliente;
     }
 
     public double getPrecio() {
-        return Precio;
+        return precio;
     }
 
     public void setPrecio(double precio) {
-        Precio = precio;
+        this.precio = precio;
     }
 
     public boolean isAguaCaliente() {
-        return AguaCaliente;
+        return aguaCaliente;
     }
 
     public void setAguaCaliente(boolean aguaCaliente) {
-        AguaCaliente = aguaCaliente;
+        this.aguaCaliente = aguaCaliente;
     }
 
     @Override
     public String toString() {
         return "Lavadora{" +
-                "Precio=" + Precio +
-                ", AguaCaliente=" + AguaCaliente +
+                "Precio=" + precio +
+                ", AguaCaliente=" + aguaCaliente +
                 '}';
     }
 
     public  double getConsumo(int horas)
     {
-        if (!this.AguaCaliente){//agua fria
-
+        if (!this.aguaCaliente){//agua fria
+            return horas*this.potencia;
         }else {//agua caliente
-
+            return horas*(this.potencia+this.potencia*0.2);
         }
 
     }
+
 
 
 }

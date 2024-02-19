@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Lavadora lavadora1 = new Lavadora("Balay", 500.0);
         try {
             int opcion;
 
